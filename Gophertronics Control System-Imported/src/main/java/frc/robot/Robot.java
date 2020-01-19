@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -32,6 +33,11 @@ public class Robot extends TimedRobot {
 
   public static CameraServer cameraOne = null;
 
+  public static Encoder encoder = null;
+
+  public static double cpr = 5;
+  public static double whd = 6;
+
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -44,7 +50,9 @@ public class Robot extends TimedRobot {
 
     // Declare Drivetrain
     m_drivetrain = new Drivetrain();
-
+ 
+    encoder = new Encoder(0, 1);
+    encoder.setDistancePerPulse(Math.PI*whd/cpr);
 
     // Operator Input stuff.
     m_oi = new OI();
@@ -67,6 +75,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    double dist = encoder.getDistance();
+    System.out.println("" + dist);
   }
 
   /**
