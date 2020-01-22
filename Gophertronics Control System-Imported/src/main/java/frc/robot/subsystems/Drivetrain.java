@@ -67,11 +67,11 @@ public class Drivetrain extends Subsystem {
   // Sets speed of motor controllers.
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
     if (this.getSpeedboost() == false) { // Checks if the speedboost trigger is enabled.
-      System.out.println("asd");
+      System.out.println("speeding");
       this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
     }
     else {
-      System.out.println("asd");
+      System.out.println("not speeding");
       this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER);
     }
   }
