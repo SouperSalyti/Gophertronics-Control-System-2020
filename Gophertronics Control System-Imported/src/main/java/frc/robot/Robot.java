@@ -36,6 +36,10 @@ public class Robot extends TimedRobot {
 
   public static Encoder m_encoder = null;
 
+  public static FrontArm m_frontarm = null;
+
+  public static Conveyor m_conveyor = null;
+
   public static final double cpr = 5;
   public static final double whd = 6;
 
@@ -51,6 +55,10 @@ public class Robot extends TimedRobot {
 
     // Declare Drivetrain
     m_drivetrain = new Drivetrain();
+
+    m_frontarm = new FrontArm();
+
+    m_conveyor = new Conveyor();
  
     m_encoder = new Encoder(0, 1);
     m_encoder.setDistancePerPulse(Math.PI*whd/cpr);

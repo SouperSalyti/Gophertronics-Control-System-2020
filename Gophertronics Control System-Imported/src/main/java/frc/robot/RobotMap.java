@@ -44,4 +44,6 @@ public class RobotMap {
 
   // Global speed modifier.
   public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
+
+  public static int HARVESTER_ID = 41;
 }
