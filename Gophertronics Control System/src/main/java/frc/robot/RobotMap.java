@@ -14,40 +14,40 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
-  // For example to map the left and right motors, you could define the
-  // following variables to use with your drivetrain subsystem.
-  // public static int leftMotor = 1;
-  // public static int rightMotor = 2;
+    // For example to map the left and right motors, you could define the
+    // following variables to use with your drivetrain subsystem.
+    // public static int leftMotor = 1;
+    // public static int rightMotor = 2;
 
-  // If you are using multiple modules, make sure to define both the port
-  // number and the module. For example you with a rangefinder:
-  // public static int rangefinderPort = 1;
-  // public static int rangefinderModule = 1;
+    // If you are using multiple modules, make sure to define both the port
+    // number and the module. For example you with a rangefinder:
+    // public static int rangefinderPort = 1;
+    // public static int rangefinderModule = 1;
 
-  // Drivetrain modifier. Change number to allow for speed-limiting.
-  public static final double DRIVETRAIN_SPEED_MODIFIER = 0.35;
-  public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 0.40;
+    // Drivetrain modifier. Change number to allow for speed-limiting.
+    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.35;
+    public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 0.40;
 
-  // Motor definitions.
-  public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
-  public static int DRIVETRAIN_LEFT_BACK_ID = 11;
-  public static int DRIVETRAIN_RIGHT_FRONT_ID = 20;
-  public static int DRIVETRAIN_RIGHT_BACK_ID = 21;
+    // Motor definitions.
+    public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
+    public static int DRIVETRAIN_LEFT_BACK_ID = 11;
+    public static int DRIVETRAIN_RIGHT_FRONT_ID = 20;
+    public static int DRIVETRAIN_RIGHT_BACK_ID = 21;
 
-  // Definitions for Driver Station-related stuff.
-  public static int OI_DRIVERSTATION_CONTROLLER = 0;
-  // Joystick axes.
-  public static int OI_MOVE_AXIS = 1; // LS
-  public static int OI_ROTATE_AXIS = 0; // LS
+    // Definitions for Driver Station-related stuff.
+    public static int OI_DRIVERSTATION_CONTROLLER = 0;
+    // Joystick axes.
+    public static int OI_MOVE_AXIS = 1; // LS
+    public static int OI_ROTATE_AXIS = 0; // LS
 
-  public static int OI_FRONTARM = 1; // A
-
-  public static int OI_SPEEDBOOST_BUTTON = 5; // RB
-
-  public static int FRONTARM_MAIN_ID = 51;
-
-  // Global speed modifier.
-  public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
-
-  public static int HARVESTER_ID = 41;
+    public static int OI_FRONTARM = 1; // A
+    
+    public static int OI_SPEEDBOOST_BUTTON = 5; // RB
+    
+    public static int FRONTARM_MAIN_ID = 51;
+    
+    // Global speed modifier.
+    public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
+    
+    public static int HARVESTER_ID = 41;
 }

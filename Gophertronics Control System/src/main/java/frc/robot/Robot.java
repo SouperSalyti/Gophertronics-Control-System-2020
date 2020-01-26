@@ -26,141 +26,141 @@ import frc.robot.subsystems.*;
  */
 public class Robot extends TimedRobot {
 
-  public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
-  public static OI m_oi;
+    public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+    public static OI m_oi;
 
-  public static Drivetrain m_drivetrain = null;
+    public static Drivetrain m_drivetrain = null;
 
-  public static CameraServer cameraOne = null;
+    public static CameraServer cameraOne = null;
 
-  public static Encoder m_encoder = null;
+    public static Encoder m_encoder = null;
 
-  public static FrontArm m_frontarm = null;
+    public static FrontArm m_frontarm = null;
 
-  public static Conveyor m_conveyor = null;
+    public static Conveyor m_conveyor = null;
 
-  public static final double cpr = 5;
-  public static final double whd = 6;
+    public static final double cpr = 5;
+    public static final double whd = 6;
 
-  Command m_autonomousCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
+    Command m_autonomousCommand;
+    SendableChooser<Command> m_chooser = new SendableChooser<>();
 
-  /**
-   * This function is run when the robot is first started up and should be
-   * used for any initialization code.
-   */
-  @Override
-  public void robotInit() {
-
-    // Declare Drivetrain
-    m_drivetrain = new Drivetrain();
-
-    m_frontarm = new FrontArm();
-
-    m_conveyor = new Conveyor();
- 
-    m_encoder = new Encoder(0, 1);
-    m_encoder.setDistancePerPulse(Math.PI*whd/cpr);
-
-    // Operator Input stuff.
-    m_oi = new OI();
-    m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
-    // chooser.addOption("My Auto", new MyAutoCommand());
-    SmartDashboard.putData("Auto mode", m_chooser);
-
-    // Create Camera Server to serve video to control station.
-    cameraOne = CameraServer.getInstance();
-    cameraOne.startAutomaticCapture();
-  }
-
-  /**
-   * This function is called every robot packet, no matter the mode. Use
-   * this for items like diagnostics that you want ran during disabled,
-   * autonomous, teleoperated and test.
-   *
-   * <p>This runs after the mode specific periodic functions, but before
-   * LiveWindow and SmartDashboard integrated updating.
-   */
-  @Override
-  public void robotPeriodic() {
-    //double dist = m_encoder.getDistance();
-    //System.out.println("" + dist);
-  }
-
-  /**
-   * This function is called once each time the robot enters Disabled mode.
-   * You can use it to reset any subsystem information you want to clear when
-   * the robot is disabled.
-   */
-  @Override
-  public void disabledInit() {
-  }
-
-  @Override
-  public void disabledPeriodic() {
-    Scheduler.getInstance().run();
-  }
-
-  /**
-   * This autonomous (along with the chooser code above) shows how to select
-   * between different autonomous modes using the dashboard. The sendable
-   * chooser code works with the Java SmartDashboard. If you prefer the
-   * LabVIEW Dashboard, remove all of the chooser code and uncomment the
-   * getString code to get the auto name from the text box below the Gyro
-   *
-   * <p>You can add additional auto modes by adding additional commands to the
-   * chooser code above (like the commented example) or additional comparisons
-   * to the switch structure below with additional strings & commands.
-   */
-  @Override
-  public void autonomousInit() {
-
-    m_autonomousCommand = m_chooser.getSelected();
-
-    /*
-     * String autoSelected = SmartDashboard.getString("Auto Selector",
-     * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-     * = new MyAutoCommand(); break; case "Default Auto": default:
-     * autonomousCommand = new ExampleCommand(); break; }
+    /**
+     * This function is run when the robot is first started up and should be
+     * used for any initialization code.
      */
+    @Override
+    public void robotInit() {
 
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.start();
+        // Declare Drivetrain
+        m_drivetrain = new Drivetrain();
+
+        m_frontarm = new FrontArm();
+
+        m_conveyor = new Conveyor();
+        
+        m_encoder = new Encoder(0, 1);
+        m_encoder.setDistancePerPulse(Math.PI*whd/cpr);
+
+        // Operator Input stuff.
+        m_oi = new OI();
+        m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
+        // chooser.addOption("My Auto", new MyAutoCommand());
+        SmartDashboard.putData("Auto mode", m_chooser);
+
+        // Create Camera Server to serve video to control station.
+        cameraOne = CameraServer.getInstance();
+        cameraOne.startAutomaticCapture();
     }
-  }
 
-  /**
-   * This function is called periodically during autonomous.
-   */
-  @Override
-  public void autonomousPeriodic() {
-    Scheduler.getInstance().run();
-  }
-
-  @Override
-  public void teleopInit() {
-    // This makes sure that the autonomous stops running when
-    // teleop starts running. If you want the autonomous to
-    // continue until interrupted by another command, remove
-    // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
+    /**
+     * This function is called every robot packet, no matter the mode. Use
+     * this for items like diagnostics that you want ran during disabled,
+     * autonomous, teleoperated and test.
+     *
+     * <p>This runs after the mode specific periodic functions, but before
+     * LiveWindow and SmartDashboard integrated updating.
+     */
+    @Override
+    public void robotPeriodic() {
+        //double dist = m_encoder.getDistance();
+        //System.out.println("" + dist);
     }
-  }
 
-  /**
-   * This function is called periodically during operator control.
-   */
-  @Override
-  public void teleopPeriodic() {
-    Scheduler.getInstance().run();
-  }
+    /**
+     * This function is called once each time the robot enters Disabled mode.
+     * You can use it to reset any subsystem information you want to clear when
+     * the robot is disabled.
+     */
+    @Override
+    public void disabledInit() {
+    }
 
-  /**
-   * This function is called periodically during test mode.
-   */
-  @Override
-  public void testPeriodic() {
-  }
+    @Override
+    public void disabledPeriodic() {
+        Scheduler.getInstance().run();
+    }
+
+    /**
+     * This autonomous (along with the chooser code above) shows how to select
+     * between different autonomous modes using the dashboard. The sendable
+     * chooser code works with the Java SmartDashboard. If you prefer the
+     * LabVIEW Dashboard, remove all of the chooser code and uncomment the
+     * getString code to get the auto name from the text box below the Gyro
+     *
+     * <p>You can add additional auto modes by adding additional commands to the
+     * chooser code above (like the commented example) or additional comparisons
+     * to the switch structure below with additional strings & commands.
+    */
+    @Override
+    public void autonomousInit() {
+
+        m_autonomousCommand = m_chooser.getSelected();
+
+        /*
+         * String autoSelected = SmartDashboard.getString("Auto Selector",
+         * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
+         * = new MyAutoCommand(); break; case "Default Auto": default:
+         * autonomousCommand = new ExampleCommand(); break; }
+         */
+
+        // schedule the autonomous command (example)
+        if (m_autonomousCommand != null) {
+            m_autonomousCommand.start();
+        }
+    }
+
+    /**
+     * This function is called periodically during autonomous.
+     */
+    @Override
+    public void autonomousPeriodic() {
+        Scheduler.getInstance().run();
+    }
+
+    @Override
+    public void teleopInit() {
+        // This makes sure that the autonomous stops running when
+        // teleop starts running. If you want the autonomous to
+        // continue until interrupted by another command, remove
+        // this line or comment it out.
+        if (m_autonomousCommand != null) {
+            m_autonomousCommand.cancel();
+        }
+    }
+
+    /**
+     * This function is called periodically during operator control.
+     */
+    @Override
+    public void teleopPeriodic() {
+        Scheduler.getInstance().run();
+    }
+
+    /**
+     * This function is called periodically during test mode.
+     */
+    @Override
+    public void testPeriodic() {
+    }
 }

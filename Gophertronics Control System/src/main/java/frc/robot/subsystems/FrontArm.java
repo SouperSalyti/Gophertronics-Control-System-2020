@@ -17,23 +17,23 @@ import frc.robot.RobotMap;
  * Add your docs here.
  */
 public class FrontArm extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
 
-  WPI_VictorSPX FrontArmSPX = null;
+    WPI_VictorSPX FrontArmSPX = null;
 
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
+    @Override
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        // setDefaultCommand(new MySpecialCommand());
+    }
 
-  public FrontArm() {
-    this.FrontArmSPX = new WPI_VictorSPX(RobotMap.FRONTARM_MAIN_ID);
-  }
+    public FrontArm() {
+        this.FrontArmSPX = new WPI_VictorSPX(RobotMap.FRONTARM_MAIN_ID);
+    }
 
-  public void move(double moveSpeed) {
-    moveSpeed = 1;
-    this.FrontArmSPX.set(ControlMode.PercentOutput, moveSpeed);
-  }
+    public void move(double moveSpeed) {
+        moveSpeed = 1;
+        this.FrontArmSPX.set(ControlMode.PercentOutput, moveSpeed);
+    }
 }
