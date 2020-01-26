@@ -83,8 +83,8 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotPeriodic() {
-        //double dist = m_encoder.getDistance();
-        //System.out.println("" + dist);
+        double count = m_encoder.get(); // Get current number of counts. One count = 1/20 revolution.
+        System.out.println(String.valueOf(count));
     }
 
     /**
