@@ -83,8 +83,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
-    double dist = m_encoder.getDistance();
-    System.out.println("" + dist);
+    //double dist = m_encoder.getDistance();
+    //System.out.println("" + dist);
   }
 
   /**
