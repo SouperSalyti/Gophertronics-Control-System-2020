@@ -42,7 +42,7 @@ public class Drivetrain extends Subsystem {
 
   public Drivetrain() {
 
-    // create motor objects. Each MOtor is grouped into a "Drive Group" that is then placed into a "Drive Platform".    
+    // create motor objects. Each Motor is grouped into a "Drive Group" that is then placed into a "Drive Platform".    
     this.leftFrontSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_FRONT_ID);
     this.leftBackSPX = new WPI_VictorSPX(RobotMap.DRIVETRAIN_LEFT_BACK_ID);
     this.leftDriveGroup = new SpeedControllerGroup(leftFrontSPX, leftBackSPX);

@@ -40,7 +40,11 @@ public class RobotMap {
   public static int OI_MOVE_AXIS = 1; // LS
   public static int OI_ROTATE_AXIS = 0; // LS
 
+  public static int OI_FRONTARM = 1; // A
+
   public static int OI_SPEEDBOOST_BUTTON = 5; // RB
+
+  public static int FRONTARM_MAIN_ID = 51;
 
   // Global speed modifier.
   public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
