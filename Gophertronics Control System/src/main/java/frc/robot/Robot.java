@@ -33,7 +33,8 @@ public class Robot extends TimedRobot {
 
     public static CameraServer cameraOne = null;
 
-    public static Encoder m_encoder = null;
+    public static Encoder m_encoder_left = null;
+    public static Encoder m_encoder_right = null;
 
     public static FrontArm m_frontarm = null;
 
@@ -59,8 +60,10 @@ public class Robot extends TimedRobot {
 
         m_conveyor = new Conveyor();
         
-        m_encoder = new Encoder(0, 1);
-        m_encoder.setDistancePerPulse(Math.PI*whd/cpr);
+        m_encoder_left = new Encoder(RobotMap.ENCODER_INPUT_LEFT_A, RobotMap.ENCODER_INPUT_LEFT_B);
+        m_encoder_right = new Encoder(RobotMap.ENCODER_INPUT_RIGHT_A, RobotMap.ENCODER_INPUT_RIGHT_B);
+        m_encoder_left.setDistancePerPulse(Math.PI*whd/cpr);
+        m_encoder_right.setDistancePerPulse(Math.PI*whd/cpr);
 
         // Operator Input stuff.
         m_oi = new OI();
@@ -83,8 +86,10 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotPeriodic() {
-        double count = m_encoder.get(); // Get current number of counts. One count = 1/20 revolution.
-        System.out.println(String.valueOf(count));
+        double lcount = m_encoder_left.get(); // Get current number of counts. One count = 1/20 revolution.
+        double rcount = -m_encoder_right.get();
+        System.out.println("Left: " + lcount);
+        System.out.println("Right: " + rcount);
     }
 
     /**

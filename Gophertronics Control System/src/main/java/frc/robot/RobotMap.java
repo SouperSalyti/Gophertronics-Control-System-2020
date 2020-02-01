@@ -44,13 +44,16 @@ public class RobotMap {
 
     public static int OI_SPEEDBOOST_BUTTON = 5; // RB
 
-    public static int FRONTARM_MAIN_ID = 51;
+    public static int FRONTARM_ID = 51;
+    public static double FRONTARM_MOVE_SPEED = 0.50;
 
     // Global speed modifier.
     public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
 
     public static int HARVESTER_ID = 41;
 
-    public static int ENCODER_INPUT_A = 1;
-    public static int ENCODER_INPUT_B = 2;
+    public static int ENCODER_INPUT_LEFT_A = 0;
+    public static int ENCODER_INPUT_LEFT_B = 1;
+    public static int ENCODER_INPUT_RIGHT_A = 2;
+    public static int ENCODER_INPUT_RIGHT_B = 3;
 }

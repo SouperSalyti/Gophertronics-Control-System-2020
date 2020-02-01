@@ -29,11 +29,10 @@ public class FrontArm extends Subsystem {
     }
 
     public FrontArm() {
-        this.FrontArmSPX = new WPI_VictorSPX(RobotMap.FRONTARM_MAIN_ID);
+        this.FrontArmSPX = new WPI_VictorSPX(RobotMap.FRONTARM_ID);
     }
 
     public void move(double moveSpeed) {
-        moveSpeed = 1;
-        this.FrontArmSPX.set(ControlMode.PercentOutput, moveSpeed);
+        this.FrontArmSPX.set(ControlMode.PercentOutput, RobotMap.FRONTARM_MOVE_SPEED);
     }
 }
