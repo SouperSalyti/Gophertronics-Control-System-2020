@@ -25,7 +25,7 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 
     // Drivetrain modifier. Change number to allow for speed-limiting.
-    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.50;
+    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.40;
     public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 1.00;
 
     // Motor definitions.
