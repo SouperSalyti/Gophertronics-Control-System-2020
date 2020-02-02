@@ -87,9 +87,9 @@ public class Robot extends TimedRobot {
     @Override
     public void robotPeriodic() {
         double lcount = m_encoder_left.get(); // Get current number of counts. One count = 1/20 revolution.
-        double rcount = -m_encoder_right.get();
+        double rcount = m_encoder_right.get();
         System.out.println("Left: " + lcount);
-        System.out.println("Right: " + rcount);
+        System.out.println("Right: " + -rcount);
     }
 
     /**
