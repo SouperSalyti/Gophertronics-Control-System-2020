@@ -28,11 +28,11 @@ public class DriveArcade extends Command {
     @Override
     protected void execute() {
         // Declare and manipulate variables for movement / turning speed.
-        double moveSpeed = -Robot.m_oi.driverController.getRawAxis(RobotMap.OI_MOVE_AXIS);
+        double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_MOVE_AXIS);
         double rotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ROTATE_AXIS);
 
         // Rotates the motors dependent on movespeed and rotatespeed
-        Robot.m_drivetrain.arcadeDrive(-moveSpeed, rotateSpeed);
+        Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
