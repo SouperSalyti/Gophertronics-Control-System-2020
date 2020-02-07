@@ -41,6 +41,7 @@ public class Robot extends TimedRobot {
     public static Conveyor m_conveyor = null;
 
     public static final double cpr = 5;
+    // Wheel Diameter
     public static final double whd = 6;
 
     Command m_autonomousCommand;
@@ -56,10 +57,13 @@ public class Robot extends TimedRobot {
         // Declare Drivetrain
         m_drivetrain = new Drivetrain();
 
+        // Declare frontarm
         m_frontarm = new FrontArm();
 
+        // Declare conveyor
         m_conveyor = new Conveyor();
-        
+
+        // Declare left and right Encoders    
         m_encoder_left = new Encoder(RobotMap.ENCODER_INPUT_LEFT_A, RobotMap.ENCODER_INPUT_LEFT_B);
         m_encoder_right = new Encoder(RobotMap.ENCODER_INPUT_RIGHT_A, RobotMap.ENCODER_INPUT_RIGHT_B);
         m_encoder_left.setDistancePerPulse(Math.PI*whd/cpr);

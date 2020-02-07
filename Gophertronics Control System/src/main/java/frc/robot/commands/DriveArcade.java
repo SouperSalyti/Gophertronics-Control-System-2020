@@ -31,6 +31,7 @@ public class DriveArcade extends Command {
         double moveSpeed = -Robot.m_oi.driverController.getRawAxis(RobotMap.OI_MOVE_AXIS);
         double rotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ROTATE_AXIS);
 
+        // Rotates the motors dependent on movespeed and rotatespeed
         Robot.m_drivetrain.arcadeDrive(-moveSpeed, rotateSpeed);
     }
 
