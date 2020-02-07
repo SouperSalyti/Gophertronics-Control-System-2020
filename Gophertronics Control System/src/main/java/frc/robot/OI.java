@@ -53,7 +53,6 @@ public class OI {
     public Button abutton = new JoystickButton(driverController, RobotMap.OI_FRONTARM);
 
     public OI() {
-
         lbButton.whileHeld(new Speedboost());
     }
 

@@ -25,7 +25,7 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 
     // Drivetrain modifier. Change number to allow for speed-limiting.
-    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.40;
+    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.50;
     public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 1.00;
 
     // Motor definitions.
@@ -52,6 +52,7 @@ public class RobotMap {
 
     public static int HARVESTER_ID = 41;
 
+    // Encoder A/B inputs for Left and Right on RoboRio Dio board
     public static int ENCODER_INPUT_LEFT_A = 0;
     public static int ENCODER_INPUT_LEFT_B = 1;
     public static int ENCODER_INPUT_RIGHT_A = 2;
