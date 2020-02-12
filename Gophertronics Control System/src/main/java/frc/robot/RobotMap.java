@@ -41,16 +41,19 @@ public class RobotMap {
     public static int OI_ROTATE_AXIS = 0; // LS
 
     public static int OI_FRONTARM = 1; // A
+    public static int OI_CONVEYOR = 2; // B
 
     public static int OI_SPEEDBOOST_BUTTON = 5; // RB
 
-    public static int FRONTARM_ID = 51;
     public static double FRONTARM_MOVE_SPEED = 0.50;
+    public static int OI_FRONTARM_ID = 61;
+
+    public static int CONVEYOR_FRONT_MOTOR_ID = 51;
+    public static int CONVEYOR_BACK_MOTOR_ID = 50;
+    public static double CONVEYOR_SPEED = 0.50;
 
     // Global speed modifier.
     public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
-
-    public static int HARVESTER_ID = 41;
 
     // Encoder A/B inputs for Left and Right on RoboRio Dio board
     public static int ENCODER_INPUT_LEFT_A = 0;

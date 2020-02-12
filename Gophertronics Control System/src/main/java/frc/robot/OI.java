@@ -51,9 +51,11 @@ public class OI {
 
     public Button lbButton = new JoystickButton(driverController, RobotMap.OI_SPEEDBOOST_BUTTON);
     public Button abutton = new JoystickButton(driverController, RobotMap.OI_FRONTARM);
+    public Button bbutton = new JoystickButton(driverController, RobotMap.OI_CONVEYOR);
 
     public OI() {
         lbButton.whileHeld(new Speedboost());
+        bbutton.whileHeld(new ConveyorVate());
     }
 
 }
