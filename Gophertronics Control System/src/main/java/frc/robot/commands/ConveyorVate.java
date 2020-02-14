@@ -12,10 +12,13 @@ import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 public class ConveyorVate extends Command {
-    public ConveyorVate() {
+    private boolean isReversed;
+
+	public ConveyorVate(boolean reversed) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.m_conveyor);
+        this.isReversed = reversed;
     }
 
     // Called just before this Command runs the first time
@@ -26,8 +29,10 @@ public class ConveyorVate extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.m_frontarm.move(RobotMap.CONVEYOR_SPEED);
+        Robot.m_conveyor.move(isReversed, RobotMap.CONVEYOR_SPEED);
+        System.out.println("CoNvEyErVaTiNg");
     }
+
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
@@ -38,11 +43,13 @@ public class ConveyorVate extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        Robot.m_conveyor.stopMove();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+        end();
     }
 }
