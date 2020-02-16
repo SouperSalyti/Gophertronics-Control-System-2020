@@ -52,11 +52,15 @@ public class OI {
     public Button lbButton = new JoystickButton(driverController, RobotMap.OI_SPEEDBOOST_BUTTON);
     public Button bbutton = new JoystickButton(driverController, RobotMap.OI_CONVEYOR_NON_REVERSE);
     public Button xbutton = new JoystickButton(driverController, RobotMap.OI_CONVEYOR_REVERSE);
+    public Button abutton = new JoystickButton(driverController, RobotMap.OI_COLORWHEEL_UP);
+    public Button ybutton = new JoystickButton(driverController, RobotMap.OI_COLORWHEEL_DOWN);
 
     public OI() {
         lbButton.whileHeld(new Speedboost());
         bbutton.whileHeld(new ConveyorVate(false));
         xbutton.whileHeld(new ConveyorVate(true));
+        abutton.whileHeld(new ColorwheelVate(true));
+        ybutton.whileHeld(new ColorwheelVate(false));
     }
 
 }

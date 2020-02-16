@@ -25,7 +25,6 @@ import frc.robot.subsystems.*;
  */
 public class Robot extends TimedRobot {
 
-
     public static OI m_oi;
 
     public static Drivetrain m_drivetrain = null;
@@ -34,6 +33,8 @@ public class Robot extends TimedRobot {
 
     public static Encoder m_encoder_left = null;
     public static Encoder m_encoder_right = null;
+
+    public static ColorwheelSpininator m_colorwheelspininator = null;
 
     public static Conveyor m_conveyor = null;
 

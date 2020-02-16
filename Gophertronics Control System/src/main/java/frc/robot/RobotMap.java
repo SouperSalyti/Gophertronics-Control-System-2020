@@ -40,19 +40,24 @@ public class RobotMap {
     public static int OI_MOVE_AXIS = 1; // LS
     public static int OI_ROTATE_AXIS = 0; // LS
 
-    public static int OI_FRONTARM = 1; // A
-    public static int OI_CONVEYOR_NON_REVERSE = 2; // B
-    public static int OI_CONVEYOR_REVERSE = 3; // X
-
     public static int OI_SPEEDBOOST_BUTTON = 5; // RB
 
+    // Conveyor motor, speed, and button definitions
     public static int CONVEYOR_FRONT_MOTOR_ID = 50;
     public static int CONVEYOR_BACK_MOTOR_ID = 51;
     public static double CONVEYOR_FRONT_SPEED = 0.50;
     public static double CONVEYOR_BACK_SPEED = 0.50;
+    public static int OI_CONVEYOR_NON_REVERSE = 2; // B
+    public static int OI_CONVEYOR_REVERSE = 3; // X
 
+    // Collor Wheel motor, speed, button, and limit switch definitions
     public static int COLORWHEEL_BOTTOM_MOTOR_ID = 60;
     public static int COLORWHEEL_TOP_MOTOR_ID = 61;
+    public static int DIO_COLORWHEEL_LIMIT = 4; // Color Wheel limit switch
+    public static int OI_COLORWHEEL_UP = 1; // A
+    public static int OI_COLORWHEEL_DOWN = 4; // Y
+    public static double COLORWHEEL_TOP_SPEED = 0.50;
+    public static double COLORWHEEL_BOTTOM_SPEED = 0.50;
 
     // Global speed modifier.
     public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;

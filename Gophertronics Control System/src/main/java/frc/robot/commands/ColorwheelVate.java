@@ -8,12 +8,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class ColorwheelVate extends Command {
-  public ColorwheelVate() {
+  public ColorwheelVate(boolean goingUp) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-  }
+    requires(Robot.m_colorwheelspininator);
+}
 
   // Called just before this Command runs the first time
   @Override
