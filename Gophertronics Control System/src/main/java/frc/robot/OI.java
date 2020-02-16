@@ -50,7 +50,6 @@ public class OI {
     public Joystick driverController = new Joystick(RobotMap.OI_DRIVERSTATION_CONTROLLER);
 
     public Button lbButton = new JoystickButton(driverController, RobotMap.OI_SPEEDBOOST_BUTTON);
-    public Button abutton = new JoystickButton(driverController, RobotMap.OI_FRONTARM);
     public Button bbutton = new JoystickButton(driverController, RobotMap.OI_CONVEYOR_NON_REVERSE);
     public Button xbutton = new JoystickButton(driverController, RobotMap.OI_CONVEYOR_REVERSE);
 

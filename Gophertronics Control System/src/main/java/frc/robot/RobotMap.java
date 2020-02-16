@@ -46,12 +46,13 @@ public class RobotMap {
 
     public static int OI_SPEEDBOOST_BUTTON = 5; // RB
 
-    public static double FRONTARM_MOVE_SPEED = 0.50;
-    public static int OI_FRONTARM_ID = 61;
-
     public static int CONVEYOR_FRONT_MOTOR_ID = 50;
     public static int CONVEYOR_BACK_MOTOR_ID = 51;
-    public static double CONVEYOR_SPEED = 0.50;
+    public static double CONVEYOR_FRONT_SPEED = 0.50;
+    public static double CONVEYOR_BACK_SPEED = 0.50;
+
+    public static int COLORWHEEL_BOTTOM_MOTOR_ID = 60;
+    public static int COLORWHEEL_TOP_MOTOR_ID = 61;
 
     // Global speed modifier.
     public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;

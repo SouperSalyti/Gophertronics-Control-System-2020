@@ -28,16 +28,13 @@ public class Conveyor extends Subsystem {
         this.ConveyorFrontArmSPX = new WPI_VictorSPX(RobotMap.CONVEYOR_FRONT_MOTOR_ID);
     }
 
-    public void move(boolean reverse, double moveSpeed) {
+    public void move(boolean reverse) {
         if (reverse == false){
-            this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, moveSpeed);
-            this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, moveSpeed);
+            this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_BACK_SPEED);
+            this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_FRONT_SPEED);
         } else {
-            if (reverse = false){
-            } else {
-                this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, -1 * moveSpeed);
-                this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, -1 * moveSpeed);
-            }
+            this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_BACK_SPEED);
+            this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_FRONT_SPEED);
         }
     }
 

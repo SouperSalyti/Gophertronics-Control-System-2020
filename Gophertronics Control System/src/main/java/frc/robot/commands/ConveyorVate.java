@@ -9,7 +9,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
 public class ConveyorVate extends Command {
     private boolean isReversed;
@@ -29,7 +28,7 @@ public class ConveyorVate extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.m_conveyor.move(isReversed, RobotMap.CONVEYOR_SPEED);
+        Robot.m_conveyor.move(isReversed);
         System.out.println("CoNvEyErVaTiNg");
     }
 
