@@ -29,12 +29,15 @@ public class Conveyor extends Subsystem {
     }
 
     public void move(boolean reverse, double moveSpeed) {
-        if (reverse == true){
-            this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, -1 * moveSpeed);
-            this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, -1 * moveSpeed);
-        } else {
+        if (reverse == false){
             this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, moveSpeed);
             this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, moveSpeed);
+        } else {
+            if (reverse = false){
+            } else {
+                this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, -1 * moveSpeed);
+                this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, -1 * moveSpeed);
+            }
         }
     }
 
