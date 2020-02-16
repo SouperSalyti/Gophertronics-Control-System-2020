@@ -45,8 +45,8 @@ public class RobotMap {
     // Conveyor motor, speed, and button definitions
     public static int CONVEYOR_FRONT_MOTOR_ID = 50;
     public static int CONVEYOR_BACK_MOTOR_ID = 51;
-    public static double CONVEYOR_FRONT_SPEED = 0.50;
-    public static double CONVEYOR_BACK_SPEED = 0.50;
+    public static double CONVEYOR_FRONT_SPEED = 1.00;
+    public static double CONVEYOR_BACK_SPEED = 1.00;
     public static int OI_CONVEYOR_NON_REVERSE = 2; // B
     public static int OI_CONVEYOR_REVERSE = 3; // X
 

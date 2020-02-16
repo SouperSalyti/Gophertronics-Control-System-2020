@@ -58,6 +58,8 @@ public class Robot extends TimedRobot {
         // Declare conveyor
         m_conveyor = new Conveyor();
 
+        m_colorwheelspininator = new ColorwheelSpininator();
+
         // Declare left and right Encoders    
         m_encoder_left = new Encoder(RobotMap.ENCODER_INPUT_LEFT_A, RobotMap.ENCODER_INPUT_LEFT_B);
         m_encoder_right = new Encoder(RobotMap.ENCODER_INPUT_RIGHT_A, RobotMap.ENCODER_INPUT_RIGHT_B);

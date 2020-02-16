@@ -20,21 +20,21 @@ public class Conveyor extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    WPI_VictorSPX ConveyorFrontArmSPX = null;
-    WPI_VictorSPX ConveyorBackArmSPX = null;
+    WPI_VictorSPX ConveyorFrontSPX = null;
+    WPI_VictorSPX ConveyorBackSPX = null;
 
     public Conveyor() {
-        this.ConveyorBackArmSPX = new WPI_VictorSPX(RobotMap.CONVEYOR_BACK_MOTOR_ID);
-        this.ConveyorFrontArmSPX = new WPI_VictorSPX(RobotMap.CONVEYOR_FRONT_MOTOR_ID);
+        this.ConveyorBackSPX = new WPI_VictorSPX(RobotMap.CONVEYOR_BACK_MOTOR_ID);
+        this.ConveyorFrontSPX = new WPI_VictorSPX(RobotMap.CONVEYOR_FRONT_MOTOR_ID);
     }
 
     public void move(boolean reverse) {
         if (reverse == false){
-            this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_BACK_SPEED);
-            this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_FRONT_SPEED);
+            this.ConveyorBackSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_BACK_SPEED);
+            this.ConveyorFrontSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_FRONT_SPEED);
         } else {
-            this.ConveyorBackArmSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_BACK_SPEED);
-            this.ConveyorFrontArmSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_FRONT_SPEED);
+            this.ConveyorBackSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_BACK_SPEED);
+            this.ConveyorFrontSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_FRONT_SPEED);
         }
     }
 
@@ -43,7 +43,7 @@ public class Conveyor extends Subsystem {
 
     }
     public void stopMove() { // Kill motors.
-        ConveyorBackArmSPX.set(ControlMode.PercentOutput, 0);
-        ConveyorFrontArmSPX.set(ControlMode.PercentOutput, 0);
+        ConveyorBackSPX.set(ControlMode.PercentOutput, 0);
+        ConveyorFrontSPX.set(ControlMode.PercentOutput, 0);
       }
 }
