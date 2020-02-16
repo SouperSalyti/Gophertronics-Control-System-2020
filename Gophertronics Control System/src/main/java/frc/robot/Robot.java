@@ -35,8 +35,6 @@ public class Robot extends TimedRobot {
     public static Encoder m_encoder_left = null;
     public static Encoder m_encoder_right = null;
 
-    public static FrontArm m_frontarm = null;
-
     public static Conveyor m_conveyor = null;
 
     public static final double cpr = 5;
@@ -55,9 +53,6 @@ public class Robot extends TimedRobot {
 
         // Declare Drivetrain
         m_drivetrain = new Drivetrain();
-
-        // Declare frontarm
-        m_frontarm = new FrontArm();
 
         // Declare conveyor
         m_conveyor = new Conveyor();
