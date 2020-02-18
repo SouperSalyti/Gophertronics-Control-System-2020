@@ -56,8 +56,8 @@ public class RobotMap {
     public static int DIO_COLORWHEEL_LIMIT = 4; // Color Wheel limit switch
     public static int OI_COLORWHEEL_UP = 1; // A
     public static int OI_COLORWHEEL_DOWN = 4; // Y
-    public static double COLORWHEEL_TOP_SPEED = 0.50;
-    public static double COLORWHEEL_BOTTOM_SPEED = 0.50;
+    public static double COLORWHEEL_TURN_SPEED = 0.50;
+    public static double COLORWHEEL_ELEVATION_SPEED = 0.50;
 
     // Global speed modifier.
     public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;
