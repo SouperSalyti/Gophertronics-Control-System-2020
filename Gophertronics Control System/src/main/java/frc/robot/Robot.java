@@ -55,9 +55,10 @@ public class Robot extends TimedRobot {
         // Declare Drivetrain
         m_drivetrain = new Drivetrain();
 
-        // Declare conveyor
+        // Declare Conveyor
         m_conveyor = new Conveyor();
 
+        // Declare Color Wheel Spinner
         m_colorwheelspininator = new ColorwheelSpininator();
 
         // Declare left and right Encoders    

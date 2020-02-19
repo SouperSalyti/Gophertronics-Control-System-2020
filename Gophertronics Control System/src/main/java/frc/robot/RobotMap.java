@@ -51,8 +51,8 @@ public class RobotMap {
     public static int OI_CONVEYOR_REVERSE = 3; // X
 
     // Collor Wheel motor, speed, button, and limit switch definitions
-    public static int COLORWHEEL_BOTTOM_MOTOR_ID = 60;
-    public static int COLORWHEEL_TOP_MOTOR_ID = 61;
+    public static int COLORWHEEL_ELEVATOR_ID = 60;
+    public static int COLORWHEEL_TURNER_ID = 61;
     public static int DIO_COLORWHEEL_LIMIT = 4; // Color Wheel limit switch
     public static int OI_COLORWHEEL_UP = 1; // A
     public static int OI_COLORWHEEL_DOWN = 4; // Y

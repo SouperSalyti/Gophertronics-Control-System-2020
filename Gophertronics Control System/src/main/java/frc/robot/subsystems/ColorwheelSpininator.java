@@ -7,10 +7,12 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
@@ -21,8 +23,13 @@ public class ColorwheelSpininator extends Subsystem {
 
     
     DigitalInput ColorwheelUpperLimit = null;
-    VictorSPX ColorwheelButtonMotorSPX = null;
-    VictorSPX ColorwheelTopMotorSPX = null;
+    WPI_VictorSPX ColorwheelTurningMotorSPX = null;
+    WPI_VictorSPX ColorwheelElevatorMotorSPX = null;
+
+    public ColorwheelSpininator(){
+        this.ColorwheelTurningMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_TURNER_ID);
+        this.ColorwheelElevatorMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_ELEVATOR_ID);
+    }
 
     @Override
     public void initDefaultCommand() {
@@ -30,7 +37,19 @@ public class ColorwheelSpininator extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
 
-    public void Move(double elevationSpeed, boolean goingUp) {
+    public void Elevate(double elevationSpeed, boolean goingUp) {
+        this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, -1 * elevationSpeed);
+    }
 
+    public void stopElevating(){
+
+    }
+
+    public void Spin(double spinSpeed, boolean direction) {
+
+    }
+
+    public void stopSpinning(){
+        
     }
 }

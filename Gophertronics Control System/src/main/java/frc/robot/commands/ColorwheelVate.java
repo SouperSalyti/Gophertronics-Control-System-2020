@@ -32,7 +32,7 @@ public class ColorwheelVate extends Command {
     @Override
     protected void execute() {
         double elevationSpeed = (RobotMap.COLORWHEEL_ELEVATION_SPEED);
-        Robot.m_colorwheelspininator.Move(elevationSpeed, goingUp);
+        Robot.m_colorwheelspininator.Elevate(elevationSpeed, goingUp);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -44,11 +44,13 @@ public class ColorwheelVate extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        Robot.m_colorwheelspininator.stopElevating();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+        end();
     }
 }
