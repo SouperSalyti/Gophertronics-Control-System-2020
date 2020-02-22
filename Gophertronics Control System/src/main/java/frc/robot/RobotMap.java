@@ -26,7 +26,7 @@ public class RobotMap {
 
     // Drivetrain modifier. Change number to allow for speed-limiting.
     public static final double DRIVETRAIN_SPEED_MODIFIER = 0.50;
-    public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 1.00;
+    public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 0.70;
 
     // Motor definitions.
     public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
@@ -43,8 +43,8 @@ public class RobotMap {
     public static int OI_SPEEDBOOST_BUTTON = 5; // RB
 
     // Conveyor motor, speed, and button definitions
-    public static int CONVEYOR_FRONT_MOTOR_ID = 50;
-    public static int CONVEYOR_BACK_MOTOR_ID = 51;
+    public static int CONVEYOR_FRONT_MOTOR_ID = 51;
+    public static int CONVEYOR_BACK_MOTOR_ID = 50;
     public static double CONVEYOR_FRONT_SPEED = 1.00;
     public static double CONVEYOR_BACK_SPEED = 1.00;
     public static int OI_CONVEYOR_NON_REVERSE = 2; // B

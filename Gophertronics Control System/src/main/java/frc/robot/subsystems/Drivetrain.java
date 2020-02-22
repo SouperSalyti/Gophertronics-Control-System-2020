@@ -27,7 +27,8 @@ public class Drivetrain extends Subsystem {
     DifferentialDrive drivePlatform = null;
 
     /* Sets whether or not arcadeDrive() utilises DRIVETRAIN_SPEED_MODIFIER 
-        or DRIVETRAIN_SPEEDBOOST_MODIFIER for motor speed. */
+        or DRIVETRAIN_SPEEDBOOST_MODIFIER for motor speed.
+        (wow nic wrote more comments than me what a nerd) */
     private boolean isSpeedboost;
 
     public Drivetrain() {
