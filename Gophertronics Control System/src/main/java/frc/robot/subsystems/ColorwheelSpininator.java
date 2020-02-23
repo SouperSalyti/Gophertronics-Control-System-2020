@@ -23,12 +23,15 @@ public class ColorwheelSpininator extends Subsystem {
 
     
     DigitalInput ColorwheelUpperLimit = null;
+    DigitalInput ColorwheelLowerLimit = null;
     WPI_VictorSPX ColorwheelSpinnerMotorSPX = null;
     WPI_VictorSPX ColorwheelElevatorMotorSPX = null;
 
     public ColorwheelSpininator(){
         this.ColorwheelSpinnerMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_SPINNER_ID);
         this.ColorwheelElevatorMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_ELEVATOR_ID);
+        this.ColorwheelUpperLimit = new DigitalInput(RobotMap.DIO_COLORWHEEL_UPPER_LIMIT);
+        this.ColorwheelLowerLimit = new DigitalInput(RobotMap.DIO_COLORWHEEL_LOWER_LIMIT);
     }
 
     @Override
@@ -39,6 +42,9 @@ public class ColorwheelSpininator extends Subsystem {
 
     public void Elevate(double elevationSpeed, boolean goingUp) {
         if (!this.ColorwheelUpperLimit.get()) {
+            elevationSpeed = 0;
+        }
+        if (!this.ColorwheelLowerLimit.get()){
             elevationSpeed = 0;
         }
 
