@@ -23,11 +23,11 @@ public class ColorwheelSpininator extends Subsystem {
 
     
     DigitalInput ColorwheelUpperLimit = null;
-    WPI_VictorSPX ColorwheelTurningMotorSPX = null;
+    WPI_VictorSPX ColorwheelSpinnerMotorSPX = null;
     WPI_VictorSPX ColorwheelElevatorMotorSPX = null;
 
     public ColorwheelSpininator(){
-        this.ColorwheelTurningMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_TURNER_ID);
+        this.ColorwheelSpinnerMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_SPINNER_ID);
         this.ColorwheelElevatorMotorSPX = new WPI_VictorSPX(RobotMap.COLORWHEEL_ELEVATOR_ID);
     }
 
@@ -38,18 +38,34 @@ public class ColorwheelSpininator extends Subsystem {
     }
 
     public void Elevate(double elevationSpeed, boolean goingUp) {
-        this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, -1 * elevationSpeed);
+        if (!this.ColorwheelUpperLimit.get()) {
+            elevationSpeed = Math.max(elevationSpeed, 0); // Only output positive (up movement).
+        } //else if (!this.ColorwheelUpperLimit.get()) {
+           // elevationSpeed = Math.min(elevationSpeed, 0); // Only output negative (down movement).
+       // }
+
+        if (goingUp == true)
+        {
+            this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, elevationSpeed);
+        } else {
+            this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, -1 * elevationSpeed);
+        }
     }
 
     public void stopElevating(){
-
+        this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, 0);
     }
 
     public void Spin(double spinSpeed, boolean direction) {
-
+        if (direction == true)
+        {
+            this.ColorwheelSpinnerMotorSPX.set(ControlMode.PercentOutput, spinSpeed);
+        } else {
+            this.ColorwheelSpinnerMotorSPX.set(ControlMode.PercentOutput, -1 * spinSpeed);
+        }
     }
 
     public void stopSpinning(){
-        
+        this.ColorwheelSpinnerMotorSPX.set(ControlMode.PercentOutput, 0);
     }
 }

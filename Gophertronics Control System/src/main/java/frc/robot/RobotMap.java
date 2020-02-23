@@ -52,11 +52,11 @@ public class RobotMap {
 
     // Collor Wheel motor, speed, button, and limit switch definitions
     public static int COLORWHEEL_ELEVATOR_ID = 60;
-    public static int COLORWHEEL_TURNER_ID = 61;
+    public static int COLORWHEEL_SPINNER_ID = 61;
     public static int DIO_COLORWHEEL_LIMIT = 4; // Color Wheel limit switch
     public static int OI_COLORWHEEL_UP = 1; // A
     public static int OI_COLORWHEEL_DOWN = 4; // Y
-    public static double COLORWHEEL_TURN_SPEED = 0.50;
+    public static double COLORWHEEL_SPIN_SPEED = 0.50;
     public static double COLORWHEEL_ELEVATION_SPEED = 0.50;
 
     // Global speed modifier.

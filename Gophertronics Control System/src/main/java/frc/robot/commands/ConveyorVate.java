@@ -10,6 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
+// I named this ConveyorVate even though nothing is Elevating...
 public class ConveyorVate extends Command {
     private boolean isReversed;
 

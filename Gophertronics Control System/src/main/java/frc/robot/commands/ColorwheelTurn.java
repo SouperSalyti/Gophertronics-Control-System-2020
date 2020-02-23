@@ -8,11 +8,18 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class ColorwheelTurn extends Command {
-    public ColorwheelTurn() {
+
+boolean Direction;
+
+    public ColorwheelTurn(boolean Direction) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+        requires(Robot.m_colorwheelspininator);
+        this.Direction = Direction;
     }
 
     // Called just before this Command runs the first time
@@ -23,6 +30,7 @@ public class ColorwheelTurn extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        Robot.m_colorwheelspininator.Spin(RobotMap.COLORWHEEL_SPIN_SPEED, Direction);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,11 +42,13 @@ public class ColorwheelTurn extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        Robot.m_colorwheelspininator.stopSpinning();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+        end();
     }
 }
