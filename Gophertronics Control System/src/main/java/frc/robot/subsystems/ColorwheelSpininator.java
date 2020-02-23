@@ -39,10 +39,8 @@ public class ColorwheelSpininator extends Subsystem {
 
     public void Elevate(double elevationSpeed, boolean goingUp) {
         if (!this.ColorwheelUpperLimit.get()) {
-            elevationSpeed = Math.max(elevationSpeed, 0); // Only output positive (up movement).
-        } //else if (!this.ColorwheelUpperLimit.get()) {
-           // elevationSpeed = Math.min(elevationSpeed, 0); // Only output negative (down movement).
-       // }
+            elevationSpeed = 0;
+        }
 
         if (goingUp == true)
         {
