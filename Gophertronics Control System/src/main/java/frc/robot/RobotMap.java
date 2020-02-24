@@ -43,12 +43,15 @@ public class RobotMap {
     public static int OI_SPEEDBOOST_BUTTON = 5; // RB
 
     // Conveyor motor, speed, and button definitions
-    public static int CONVEYOR_FRONT_MOTOR_ID = 51;
-    public static int CONVEYOR_BACK_MOTOR_ID = 50;
-    public static double CONVEYOR_FRONT_SPEED = 1.00;
-    public static double CONVEYOR_BACK_SPEED = 1.00;
-    public static int OI_CONVEYOR_NON_REVERSE = 2; // B
-    public static int OI_CONVEYOR_REVERSE = 3; // X
+    public static int HARVESTER_MOTOR_ID = 51;
+    public static int CONVEYOR_MOTOR_ID = 50;
+    public static double HARVESTER_SPEED = 0.30;
+    public static double CONVEYOR_SPEED = 0.30;
+    public static int OI_CONVESTER_NON_REVERSE = 2; // B
+    public static int OI_CONVESTER_REVERSE = 3; // X
+    public static int DIO_CONVEYOR_LIMIT = 6;
+
+    public static double CONVEYOR_TIME = 3;
 
     // Collor Wheel motor, speed, button, and limit switch definitions
     public static int COLORWHEEL_ELEVATOR_ID = 60;

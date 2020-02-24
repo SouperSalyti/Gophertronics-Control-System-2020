@@ -10,35 +10,41 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.*;
 
 /**
  * Add your docs here.
  */
-public class Conveyor extends Subsystem {
+public class Harvester extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    WPI_VictorSPX ConveyorSPX = null;
-
-    public Conveyor() {
-        this.ConveyorSPX = new WPI_VictorSPX(RobotMap.CONVEYOR_MOTOR_ID);
-    }
-
-    public void move(boolean reverse) {
-        if (reverse == false){
-            this.ConveyorSPX.set(ControlMode.PercentOutput, RobotMap.CONVEYOR_SPEED);
-        } else {
-            this.ConveyorSPX.set(ControlMode.PercentOutput, -1 * RobotMap.CONVEYOR_SPEED);
-        }
-    }
+    WPI_VictorSPX HarvesterSPX = null;
+    DigitalInput ConveyorLimit = null;
 
     @Override
-    protected void initDefaultCommand() {
-
+    public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        // setDefaultCommand(new MySpecialCommand());
     }
+
+    public Harvester() {
+        this.HarvesterSPX = new WPI_VictorSPX(RobotMap.HARVESTER_MOTOR_ID);
+        this.ConveyorLimit = new DigitalInput(RobotMap.DIO_CONVEYOR_LIMIT);
+    }
+
+    public void move(double HarvestSpeed) {
+        if (!this.ConveyorLimit.get()) {
+            new ConveyorVate(false, 2.5);
+            stopMove();
+        } else {
+            this.HarvesterSPX.set(ControlMode.PercentOutput, HarvestSpeed);
+        }
+    }    
     public void stopMove() { // Kill motors.
-        ConveyorSPX.set(ControlMode.PercentOutput, 0);
+        HarvesterSPX.set(ControlMode.PercentOutput, 0);
     }
 }

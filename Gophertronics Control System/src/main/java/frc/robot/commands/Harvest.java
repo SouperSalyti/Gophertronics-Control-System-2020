@@ -9,52 +9,41 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
-// I named this ConveyorVate even though nothing is Elevating...
-// Actually the balls are elevating so I am mistaken.
-// Not by much though, just like a foot higher
-public class ConveyorVate extends Command {
-    
-    private boolean isReversed;
-    private double m_Timer;
+public class Harvest extends Command {
 
-	public ConveyorVate(boolean reversed, double timer) {
+    public Harvest() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(Robot.m_conveyor);
-        this.isReversed = reversed;
-        m_Timer = timer;
+        requires(Robot.m_harvester);
     }
 
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        setTimeout(m_Timer);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.m_conveyor.move(isReversed);
-        System.out.println("CoNvEyErVaTiNg");
+        Robot.m_harvester.move(RobotMap.HARVESTER_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return isTimedOut();
+        return false;
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Robot.m_conveyor.stopMove();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-        end();
     }
 }

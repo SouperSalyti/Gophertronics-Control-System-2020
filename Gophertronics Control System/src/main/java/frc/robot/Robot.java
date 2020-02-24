@@ -38,6 +38,8 @@ public class Robot extends TimedRobot {
 
     public static Conveyor m_conveyor = null;
 
+    public static Harvester m_harvester = null;
+
     public static final double cpr = 5;
     // Wheel Diameter
     public static final double whd = 6;
@@ -60,6 +62,8 @@ public class Robot extends TimedRobot {
 
         // Declare Color Wheel Spinner
         m_colorwheelspininator = new ColorwheelSpininator();
+
+        m_harvester = new Harvester();
 
         // Declare left and right Encoders    
         m_encoder_left = new Encoder(RobotMap.ENCODER_INPUT_LEFT_A, RobotMap.ENCODER_INPUT_LEFT_B);
