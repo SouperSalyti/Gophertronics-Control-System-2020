@@ -45,8 +45,8 @@ public class RobotMap {
     // Conveyor motor, speed, and button definitions
     public static int HARVESTER_MOTOR_ID = 51;
     public static int CONVEYOR_MOTOR_ID = 50;
-    public static double HARVESTER_SPEED = 0.30;
-    public static double CONVEYOR_SPEED = 0.30;
+    public static double HARVESTER_SPEED = 0.75;
+    public static double CONVEYOR_SPEED = 1.00;
     public static int OI_CONVESTER_NON_REVERSE = 2; // B
     public static int OI_CONVESTER_REVERSE = 3; // X
     public static int DIO_CONVEYOR_LIMIT = 6;
@@ -62,7 +62,8 @@ public class RobotMap {
     public static int OI_COLORWHEEL_LEFT = 4; // Y
     public static double COLORWHEEL_SPIN_SPEED = 0.50;
     public static double COLORWHEEL_ELEVATION_SPEED = 0.50;
-    public static int OI_COLORWHEEL_AXIS = 5; // RS
+    public static int OI_COLORWHEEL_ELEVATOR_AXIS = 5; // RS
+    public static int OI_COLORWHEEL_SPINNER_AXIS = 4;
 
     // Global speed modifier.
     public static double SUBSYSTEMS_GLOBAL_SPEED_MODIFIER = 0.45;

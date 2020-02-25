@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -40,6 +41,8 @@ public class Robot extends TimedRobot {
 
     public static Harvester m_harvester = null;
 
+    public static DigitalInput ConveyorLimit = null;
+
     public static final double cpr = 5;
     // Wheel Diameter
     public static final double whd = 6;
@@ -64,6 +67,8 @@ public class Robot extends TimedRobot {
         m_colorwheelspininator = new ColorwheelSpininator();
 
         m_harvester = new Harvester();
+        
+        Robot.ConveyorLimit = new DigitalInput(RobotMap.DIO_CONVEYOR_LIMIT);
 
         // Declare left and right Encoders    
         m_encoder_left = new Encoder(RobotMap.ENCODER_INPUT_LEFT_A, RobotMap.ENCODER_INPUT_LEFT_B);
@@ -91,10 +96,6 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotPeriodic() {
-        double lcount = m_encoder_left.get(); // Get current number of counts. One count = 1/20 revolution.
-        double rcount = m_encoder_right.get();
-        System.out.println("Left: " + lcount);
-        System.out.println("Right: " + -rcount);
     }
 
     /**
