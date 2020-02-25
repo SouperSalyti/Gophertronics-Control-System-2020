@@ -13,14 +13,11 @@ import frc.robot.RobotMap;
 
 public class ColorwheelVate extends Command {
 
-    boolean goingUp;
-
-    public ColorwheelVate(boolean goingUp) {
+    public ColorwheelVate() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.m_colorwheelspininator);
 
-        this.goingUp = goingUp;
     }
 
     // Called just before this Command runs the first time
@@ -31,8 +28,10 @@ public class ColorwheelVate extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_COLORWHEEL_AXIS)* RobotMap.COLORWHEEL_ELEVATION_SPEED;
-        Robot.m_colorwheelspininator.Elevate(elevationSpeed, goingUp);
+        double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_COLORWHEEL_ELEVATOR_AXIS) * RobotMap.COLORWHEEL_ELEVATION_SPEED;
+        Robot.m_colorwheelspininator.Elevate(elevationSpeed);
+        double turnSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_COLORWHEEL_SPINNER_AXIS) * RobotMap.COLORWHEEL_SPIN_SPEED;
+        Robot.m_colorwheelspininator.Spin(turnSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

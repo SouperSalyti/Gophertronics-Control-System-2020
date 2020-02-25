@@ -13,6 +13,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.ColorwheelVate;
 
 /**
  * Add your docs here.
@@ -38,35 +39,23 @@ public class ColorwheelSpininator extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new ColorwheelVate());
     }
 
-    public void Elevate(double elevationSpeed, boolean goingUp) {
+    public void Elevate(double elevationSpeed) {
         if (!this.ColorwheelUpperLimit.get()) {
-            elevationSpeed = 0;
+            elevationSpeed = Math.max(elevationSpeed, 0);
         }
-        if (!this.ColorwheelLowerLimit.get()){
-            elevationSpeed = 0;
-        }
-
-        if (goingUp == true)
-        {
-            this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, elevationSpeed);
-        } else {
-            this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, -1 * elevationSpeed);
-        }
+        this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, elevationSpeed);
     }
 
     public void stopElevating(){
         this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, 0);
     }
 
-    public void Spin(double spinSpeed, boolean direction) {
-        if (direction == true)
-        {
-            this.ColorwheelSpinnerMotorSPX.set(ControlMode.PercentOutput, spinSpeed);
-        } else {
-            this.ColorwheelSpinnerMotorSPX.set(ControlMode.PercentOutput, -1 * spinSpeed);
-        }
+    public void Spin(double spinSpeed) {
+        this.ColorwheelSpinnerMotorSPX.set(ControlMode.PercentOutput, spinSpeed);
+        
     }
 
     public void stopSpinning(){
