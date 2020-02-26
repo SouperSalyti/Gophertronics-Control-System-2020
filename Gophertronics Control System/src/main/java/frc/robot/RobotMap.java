@@ -47,19 +47,15 @@ public class RobotMap {
     public static int CONVEYOR_MOTOR_ID = 50;
     public static double HARVESTER_SPEED = 0.75;
     public static double CONVEYOR_SPEED = 1.00;
-    public static int OI_CONVESTER_NON_REVERSE = 2; // B
-    public static int OI_CONVESTER_REVERSE = 3; // X
     public static int DIO_CONVEYOR_LIMIT = 6;
-
-    public static double CONVEYOR_TIME = 3;
+    public static double CONVEYOR_TIME = 0.70;
+    public static double HARVESTER_TIME = 0.1;
 
     // Collor Wheel motor, speed, button, and limit switch definitions
     public static int COLORWHEEL_ELEVATOR_ID = 60;
     public static int COLORWHEEL_SPINNER_ID = 61;
     public static int DIO_COLORWHEEL_UPPER_LIMIT = 4; // Color Wheel upper limit switch
     public static int DIO_COLORWHEEL_LOWER_LIMIT = 5;
-    public static int OI_COLORWHEEL_RIGHT = 1; // A
-    public static int OI_COLORWHEEL_LEFT = 4; // Y
     public static double COLORWHEEL_SPIN_SPEED = 0.50;
     public static double COLORWHEEL_ELEVATION_SPEED = 0.50;
     public static int OI_COLORWHEEL_ELEVATOR_AXIS = 5; // RS
@@ -73,4 +69,9 @@ public class RobotMap {
     public static int ENCODER_INPUT_LEFT_B = 1;
     public static int ENCODER_INPUT_RIGHT_A = 2;
     public static int ENCODER_INPUT_RIGHT_B = 3;
+
+    public static int A_BUTTON = 1;
+    public static int B_BUTTON = 2;
+    public static int X_BUTTON = 3;
+    public static int Y_BUTTON = 4;
 }

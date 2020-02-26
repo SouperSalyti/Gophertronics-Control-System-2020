@@ -50,21 +50,15 @@ public class OI {
     public Joystick driverController = new Joystick(RobotMap.OI_DRIVERSTATION_CONTROLLER);
 
     public Button lbButton = new JoystickButton(driverController, RobotMap.OI_SPEEDBOOST_BUTTON);
-    public Button bbutton = new JoystickButton(driverController, RobotMap.OI_CONVESTER_NON_REVERSE);
-    public Button xbutton = new JoystickButton(driverController, RobotMap.OI_CONVESTER_REVERSE);
-    public Button abutton = new JoystickButton(driverController, RobotMap.OI_COLORWHEEL_RIGHT);
-    public Button ybutton = new JoystickButton(driverController, RobotMap.OI_COLORWHEEL_LEFT);
+    public Button bbutton = new JoystickButton(driverController, RobotMap.B_BUTTON);
+    public Button xbutton = new JoystickButton(driverController, RobotMap.X_BUTTON);
+    public Button abutton = new JoystickButton(driverController, RobotMap.A_BUTTON);
+    public Button ybutton = new JoystickButton(driverController, RobotMap.Y_BUTTON);
 
     public OI() {
         lbButton.whileHeld(new Speedboost());
-        //bbutton.whileHeld(new ConveyorVate(false, 100));
-        //xbutton.whileHeld(new ConveyorVate(true, 100));
-        //bbutton.whenPressed(new ConveyorVate(false, 100));
-        //abutton.whileHeld(new ColorwheelTurn(true));
-        //ybutton.whileHeld(new ColorwheelTurn(false));
-
-        xbutton.whenPressed(new Harvest());
-        ybutton.whenPressed(new ConveyorVate(false, 2.5));
+        xbutton.whenPressed(new ShootAll());
+        bbutton.whenPressed(new StopHarveyor());
+        abutton.whenPressed(new Harveyorvate());
     }
-
 }
