@@ -36,7 +36,7 @@ public class Harveyorvate extends CommandGroup {
         requires(Robot.m_harvester);
 
         addSequential(new Harvest());
-        addParallel(new HarvestTwo(RobotMap.HARVESTER_TIME));
+        //addParallel(new HarvestTwo(RobotMap.HARVESTER_TIME));
         addSequential(new ConveyorVate(false, RobotMap.CONVEYOR_TIME));
     }
 }
