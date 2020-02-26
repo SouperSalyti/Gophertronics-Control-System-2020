@@ -9,6 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
+import frc.robot.RobotMap;
 
 public class Harveyorvate extends CommandGroup {
     /**
@@ -35,7 +36,7 @@ public class Harveyorvate extends CommandGroup {
         requires(Robot.m_harvester);
 
         addSequential(new Harvest());
-        addSequential(new ConveyorVate(false, 0.55));
-
+        addParallel(new HarvestTwo(RobotMap.HARVESTER_TIME));
+        addSequential(new ConveyorVate(false, RobotMap.CONVEYOR_TIME));
     }
 }
