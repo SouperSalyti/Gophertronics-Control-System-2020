@@ -31,7 +31,7 @@ public class Harvest extends Command {
     @Override
     protected void execute() {
         if (!Robot.ConveyorLimit.get()) {
-            this.cancelHarvest = true;
+            cancelHarvest = true;
         } else {
             Robot.m_harvester.move(RobotMap.HARVESTER_SPEED);
         }
