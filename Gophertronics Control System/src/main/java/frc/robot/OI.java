@@ -58,7 +58,8 @@ public class OI {
     public OI() {
         lbButton.whileHeld(new Speedboost());
         xbutton.whenPressed(new ShootAll());
-        bbutton.whenPressed(new StopHarveyor());
-        abutton.whenPressed(new Harveyorvate());
+        ybutton.whenPressed(new StopHarveyor());
+        bbutton.whenPressed(new ConveyorVate(false, 0.55));
+        abutton.whileHeld(new Harvest());
     }
 }

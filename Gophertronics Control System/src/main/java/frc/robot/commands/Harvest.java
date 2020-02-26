@@ -30,17 +30,13 @@ public class Harvest extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        if (!Robot.ConveyorLimit.get()) {
-            cancelHarvest = true;
-        } else {
-            Robot.m_harvester.move(RobotMap.HARVESTER_SPEED);
-        }
+        Robot.m_harvester.move(RobotMap.HARVESTER_SPEED);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return cancelHarvest;
+        return false;
     }
 
     // Called once after isFinished returns true
