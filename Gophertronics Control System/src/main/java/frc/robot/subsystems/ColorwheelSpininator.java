@@ -46,6 +46,9 @@ public class ColorwheelSpininator extends Subsystem {
         if (!this.ColorwheelUpperLimit.get()) {
             elevationSpeed = Math.max(elevationSpeed, 0);
         }
+        if (!this.ColorwheelLowerLimit.get()) {
+            elevationSpeed = Math.min(elevationSpeed, 0);
+        }
         this.ColorwheelElevatorMotorSPX.set(ControlMode.PercentOutput, elevationSpeed);
     }
 
