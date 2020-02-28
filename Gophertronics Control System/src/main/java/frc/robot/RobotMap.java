@@ -25,8 +25,8 @@ public class RobotMap {
     // public static int rangefinderModule = 1;
 
     // Drivetrain modifier. Change number to allow for speed-limiting.
-    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.50;
-    public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 0.70;
+    public static final double DRIVETRAIN_SPEED_MODIFIER = 0.75;
+    public static final double DRIVETRAIN_SPEEDBOOST_MODIFIER = 1.00;
 
     // Motor definitions.
     public static int DRIVETRAIN_LEFT_FRONT_ID = 10;
@@ -45,7 +45,7 @@ public class RobotMap {
     // Conveyor motor, speed, and button definitions
     public static int HARVESTER_MOTOR_ID = 51;
     public static int CONVEYOR_MOTOR_ID = 50;
-    public static double HARVESTER_SPEED = 0.75;
+    public static double HARVESTER_SPEED = 1.00;
     public static double CONVEYOR_SPEED = 1.00;
     public static int DIO_CONVEYOR_LIMIT = 6;
     public static double CONVEYOR_TIME = 0.70;
@@ -56,7 +56,7 @@ public class RobotMap {
     public static int COLORWHEEL_SPINNER_ID = 61;
     public static int DIO_COLORWHEEL_UPPER_LIMIT = 4; // Color Wheel upper limit switch
     public static int DIO_COLORWHEEL_LOWER_LIMIT = 5;
-    public static double COLORWHEEL_SPIN_SPEED = 0.50;
+    public static double COLORWHEEL_SPIN_SPEED = 0.75;
     public static double COLORWHEEL_ELEVATION_SPEED = 0.50;
     public static int OI_COLORWHEEL_ELEVATOR_AXIS = 5; // RS
     public static int OI_COLORWHEEL_SPINNER_AXIS = 4;

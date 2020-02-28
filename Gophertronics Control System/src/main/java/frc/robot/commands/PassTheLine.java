@@ -5,52 +5,51 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class DriveArcade extends Command {
-    public DriveArcade() {
+public class PassTheLine extends Command {
+
+    private double timeOut;
+    public PassTheLine(double Timer) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.m_drivetrain);
+        this.timeOut = Timer;
     }
 
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
+        this.timeOut = 3;
+        setTimeout(this.timeOut);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        // Declare and manipulate variables for movement / turning speed.
-        double moveSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_MOVE_AXIS);
-        double rotateSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_ROTATE_AXIS);
-
-        // Rotates the motors dependent on movespeed and rotatespeed
-        Robot.m_drivetrain.arcadeDrive(moveSpeed, rotateSpeed);
+        Robot.m_drivetrain.arcadeDrive(-0.70, -0.2);
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
     @Override
     protected void end() {
-        Robot.m_drivetrain.arcadeDrive(0, 0); // Stop the robot once joystick is within deadzone.
+        Robot.m_drivetrain.arcadeDrive(0, 0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-         // go to end() if interrupted by another command.
+        end();
     }
 }

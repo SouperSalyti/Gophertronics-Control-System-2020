@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.PassTheLine;
 import frc.robot.subsystems.*;
 
 /**
@@ -50,6 +51,8 @@ public class Robot extends TimedRobot {
     Command m_autonomousCommand;
     SendableChooser<Command> m_chooser = new SendableChooser<>();
 
+    Command passTheLine;
+
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -67,6 +70,9 @@ public class Robot extends TimedRobot {
         m_colorwheelspininator = new ColorwheelSpininator();
 
         m_harvester = new Harvester();
+
+        passTheLine = new PassTheLine(2);
+        
         
         Robot.ConveyorLimit = new DigitalInput(RobotMap.DIO_CONVEYOR_LIMIT);
 
@@ -125,6 +131,8 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void autonomousInit() {
+        //
+        passTheLine.start();
 
         m_autonomousCommand = m_chooser.getSelected();
 
