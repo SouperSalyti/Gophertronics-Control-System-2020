@@ -13,11 +13,11 @@ import frc.robot.Robot;
 public class PassTheLine extends Command {
 
     private double timeOut;
-    public PassTheLine(double Timer) {
+    public PassTheLine(double timer/*, double move, double rotate*/) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.m_drivetrain);
-        this.timeOut = Timer;
+        this.timeOut = timer;
     }
 
     // Called just before this Command runs the first time
