@@ -15,8 +15,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import frc.robot.commands.AutonomousMovement;
-import frc.robot.commands.PassTheLine;
+import frc.robot.commands.AutonomousMovement;
+//import frc.robot.commands.PassTheLine;
 import frc.robot.subsystems.*;
 
 /**
@@ -53,7 +53,7 @@ public class Robot extends TimedRobot {
     SendableChooser<Command> m_chooser = new SendableChooser<>();
 
     Command autonomousMovement;
-    Command passTheLine;
+    //Command passTheLine;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -73,8 +73,8 @@ public class Robot extends TimedRobot {
 
         m_harvester = new Harvester();
 
-        //autonomousMovement = new AutonomousMovement();
-        passTheLine = new PassTheLine(2);
+        autonomousMovement = new AutonomousMovement();
+        //passTheLine = new PassTheLine(2);
         
         Robot.ConveyorLimit = new DigitalInput(RobotMap.DIO_CONVEYOR_LIMIT);
 
@@ -133,8 +133,8 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void autonomousInit() {
-        //autonomousMovement.start();
-        passTheLine.start();
+        autonomousMovement.start();
+        //passTheLine.start();
 
         m_autonomousCommand = m_chooser.getSelected();
 

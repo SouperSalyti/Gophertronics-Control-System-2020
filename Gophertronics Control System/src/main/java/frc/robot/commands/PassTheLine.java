@@ -13,24 +13,27 @@ import frc.robot.Robot;
 public class PassTheLine extends Command {
 
     private double timeOut;
-    public PassTheLine(double timer/*, double move, double rotate*/) {
+    private double moveSpeed;
+    private double rotateSpeed;
+    public PassTheLine(double timer, double move, double rotate) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(Robot.m_drivetrain);
         this.timeOut = timer;
+        this.moveSpeed = move;
+        this.rotateSpeed = rotate;
     }
 
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        this.timeOut = 3;
         setTimeout(this.timeOut);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.m_drivetrain.arcadeDrive(-0.70, -0.2);
+        Robot.m_drivetrain.arcadeDrive(this.moveSpeed, this.rotateSpeed);
         
     }
 

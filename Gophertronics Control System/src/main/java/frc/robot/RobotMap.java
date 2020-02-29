@@ -57,7 +57,7 @@ public class RobotMap {
     public static int COLORWHEEL_SPINNER_ID = 61;
     public static int DIO_COLORWHEEL_UPPER_LIMIT = 4; // Color Wheel upper limit switch
     public static int DIO_COLORWHEEL_LOWER_LIMIT = 5;
-    public static double COLORWHEEL_SPIN_SPEED = 0.75;
+    public static double COLORWHEEL_SPIN_SPEED = 0.25;
     public static double COLORWHEEL_ELEVATION_SPEED = 0.50;
     public static int OI_COLORWHEEL_ELEVATOR_AXIS = 5; // RS
     public static int OI_COLORWHEEL_SPINNER_AXIS = 4;

@@ -33,6 +33,7 @@ public class AutonomousMovement extends CommandGroup {
     // arm.
     requires(Robot.m_drivetrain);
 
-    //addSequential(PassTheLine(3.0, 3.0, 3.0));
+    addSequential(new PassTheLine(3, -0.70, -0.20));
+    //addSequential(new PassTheLine(5, 0, 0.80));
   }
 }

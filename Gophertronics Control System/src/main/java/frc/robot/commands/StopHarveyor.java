@@ -26,8 +26,8 @@ public class StopHarveyor extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.m_harvester.stopMove();
         Robot.m_conveyor.stopMove();
+        Robot.m_harvester.stopMove();
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -28,8 +28,8 @@ public class ColorwheelVate extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        //double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_COLORWHEEL_ELEVATOR_AXIS) * RobotMap.COLORWHEEL_ELEVATION_SPEED;
-        //Robot.m_colorwheelspininator.Elevate(elevationSpeed);
+        double elevationSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_COLORWHEEL_ELEVATOR_AXIS) * RobotMap.COLORWHEEL_ELEVATION_SPEED;
+        Robot.m_colorwheelspininator.Elevate(elevationSpeed);
         double turnSpeed = Robot.m_oi.driverController.getRawAxis(RobotMap.OI_COLORWHEEL_SPINNER_AXIS) * RobotMap.COLORWHEEL_SPIN_SPEED;
         Robot.m_colorwheelspininator.Spin(turnSpeed);
     }

@@ -54,6 +54,7 @@ public class OI {
     public Button xbutton = new JoystickButton(driverController, RobotMap.X_BUTTON);
     public Button abutton = new JoystickButton(driverController, RobotMap.A_BUTTON);
     public Button ybutton = new JoystickButton(driverController, RobotMap.Y_BUTTON);
+    public Button rbbutton = new JoystickButton(driverController, 6);
 
     public OI() {
         lbButton.whileHeld(new Speedboost());   
@@ -61,5 +62,6 @@ public class OI {
         ybutton.whenPressed(new StopHarveyor());
         bbutton.whenPressed(new ConveyorVate(false, 0.6));
         abutton.whenPressed(new Harvest());
+        rbbutton.whenPressed(new ConveyorVate(true, 0.6));
     }
 }
