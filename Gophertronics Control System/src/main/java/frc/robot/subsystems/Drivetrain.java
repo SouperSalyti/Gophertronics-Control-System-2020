@@ -59,7 +59,7 @@ public class Drivetrain extends Subsystem {
     public void arcadeDrive(double moveSpeed, double rotateSpeed) {
         if (this.getSpeedboost() == false) { // Checks if the speedboost trigger is enabled.
             System.out.println("");
-            this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER);
+            this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEED_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_ROTATE_SPEED_MODIFIER);
         } else {
             System.out.println("");
             this.drivePlatform.arcadeDrive(moveSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER,rotateSpeed*RobotMap.DRIVETRAIN_SPEEDBOOST_MODIFIER);

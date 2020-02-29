@@ -60,6 +60,6 @@ public class OI {
         xbutton.whenPressed(new ShootAll());
         ybutton.whenPressed(new StopHarveyor());
         bbutton.whenPressed(new ConveyorVate(false, 0.6));
-        abutton.whileHeld(new Harvest());
+        abutton.whenPressed(new Harvest());
     }
 }
